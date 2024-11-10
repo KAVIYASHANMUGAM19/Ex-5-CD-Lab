@@ -13,7 +13,7 @@ To write a YACC program to recognize the grammar anb where n>=10.
 8.	Enter a string as input and it is identified as valid or invalid.
 # PROGRAM:
 
-Grammar.l
+## Grammar.l
 
 
 %{
@@ -43,7 +43,7 @@ int yywrap()
 }
 
 
-Grammar.y
+## Grammar.y
 
 
 %{
