@@ -15,6 +15,7 @@ To write a YACC program to recognize the grammar anb where n>=10.
 
 Grammar.l
 
+
 %{
 #include "y.tab.h"
 %}
@@ -29,7 +30,9 @@ int yywrap() {
     return 1;
 }
 
+
 Grammar.y
+
 
 %{
 #include <stdio.h>
@@ -55,6 +58,7 @@ int main() {
 void yyerror(const char *s) {
     printf("Invalid string\n");
 }
+
 
 # OUTPUT
 
