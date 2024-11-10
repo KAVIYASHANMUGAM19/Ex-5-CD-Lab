@@ -17,17 +17,29 @@ Grammar.l
 
 
 %{
+
 #include "y.tab.h"
-%}
+
+%
+
+}
 
 %%
+
 a    { return A; }  // Recognize 'a' as token A
+
 b    { return B; }  // Recognize 'b' as token B
+
 .    { return 0; }  // End of input
+
 %%
 
-int yywrap() {
+int yywrap()
+
+{
+
     return 1;
+    
 }
 
 
@@ -35,28 +47,46 @@ Grammar.y
 
 
 %{
+
 #include <stdio.h>
+
 int yylex(void);
+
 void yyerror(const char *s);
-%}
+
+%
+
+}
 
 %token A B
 
 %%
+
 S   : A A A A A A A A A A B    { printf("Valid string\n"); }
+
     | A S B                    { printf("Valid string\n"); }
+    
     ;
 
 %%
 
-int main() {
+int main()
+
+{
     printf("Enter a string:\n");
+    
     yyparse();
+    
     return 0;
+    
 }
 
-void yyerror(const char *s) {
+void yyerror(const char *s)
+
+{
+
     printf("Invalid string\n");
+    
 }
 
 
